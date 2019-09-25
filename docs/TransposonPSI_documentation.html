@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.2.6" />
+<style type="text/css">
+/* Debug borders */
+p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 {
+/*
+  border: 1px solid red;
+*/
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+tt {
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: sans-serif;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+
+div.sectionbody {
+  font-family: serif;
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revision {
+  font-family: sans-serif;
+}
+
+div#footer {
+  font-family: sans-serif;
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble,
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-right: 10%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+
+div.listingblock {
+  margin-right: 0%;
+}
+div.listingblock > div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock > div.content {
+  padding-left: 2.0em;
+}
+
+div.attribution {
+  text-align: right;
+}
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 2px solid silver;
+}
+
+div.exampleblock > div.content {
+  border-left: 2px solid silver;
+  padding: 0.5em;
+}
+
+div.verseblock div.content {
+  white-space: pre;
+}
+
+div.imageblock div.content { padding-left: 0; }
+div.imageblock img { border: 1px solid silver; }
+span.image img { border-style: none; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+div.olist > ol {
+  list-style-type: decimal;
+}
+div.olist2 > ol {
+  list-style-type: lower-alpha;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+tfoot {
+  font-weight: bold;
+}
+
+div.hlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hlist td {
+  padding-bottom: 15px;
+}
+td.hlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+}
+td.hlist2 {
+  vertical-align: top;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+/* Workarounds for IE6's broken and incomplete CSS2. */
+
+div.sidebar-content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+div.sidebar-title, div.image-title {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 0.0em;
+  margin-bottom: 0.5em;
+}
+
+div.listingblock div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock-content {
+  padding-left: 2.0em;
+}
+
+div.exampleblock-content {
+  border-left: 2px solid silver;
+  padding-left: 0.5em;
+}
+
+/* IE6 sets dynamically generated links as visited. */
+div#toc a:visited { color: blue; }
+
+/* Because IE6 child selector is broken. */
+div.olist2 ol {
+  list-style-type: lower-alpha;
+}
+div.olist2 div.olist ol {
+  list-style-type: decimal;
+}
+</style>
+<title>TransposonPSI: An Application of PSI-Blast to Mine (Retro-)Transposon ORF Homologies</title>
+</head>
+<body>
+<div id="header">
+<h1>TransposonPSI: An Application of PSI-Blast to Mine (Retro-)Transposon ORF Homologies</h1>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="para"><p>TransposonPSI is an analysis tool to identify protein or nucleic acid sequence homology to proteins encoded by diverse families of transposable elements.  PSI-Blast is used with a collection of (retro-)transposon ORF homology profiles to identify statistically significant alignments.  This method can be used to identify potential transposon ORFs within a protein set, or to identify regions of transposon homology within a larger genome sequence.  This is particularly useful to identify degenerate transposon homologies within genome sequences that escape identification and masking by using RepeatMasker and an associated nucleotide library of repetitive elements.  TransposonPSI has been routinely used to assist in the discovery of mobile elements across eukaryotes including protozoa, plants, fungi, and animals.</p></div>
+<div class="para"><p><a href="https://sourceforge.net/project/platformdownload.php?group_id=195256">Download</a> TransposonPSI</p></div>
+<div class="para"><p>Included in the release is:</p></div>
+<div class="ilist"><ul>
+<li>
+<p>
+a perl script to run TransposonPSI on a multi-fasta file containing protein(orf) or nucleotide(cds or genome) sequences using a collection of psi-blast profiles for a variety of transposon families
+</p>
+</li>
+<li>
+<p>
+a large collection of diverse transpson ORF protein sequences that can be blast-searched separately.
+</p>
+</li>
+</ul></div>
+<div class="para"><p>The types of transposons represented include:</p></div>
+<div class="ilist"><ul>
+<li>
+<p>
+gypsy and copia polyproteins
+</p>
+</li>
+<li>
+<p>
+cryptons
+</p>
+</li>
+<li>
+<p>
+helitrons
+</p>
+</li>
+<li>
+<p>
+various families of DNA transposons
+</p>
+</li>
+<li>
+<p>
+line retrotransposon orfs
+</p>
+</li>
+</ul></div>
+<div class="para"><p>and other potentially interesting transposon proteins.</p></div>
+<div class="para"><p>The proteins are loosely catalogued according to family type, and the family information is located in the fasta header.</p></div>
+<div class="para"><p>This simple tool and the collection of sequences have been used widely over the years for genome annotation as a rapid way to identify related transposons and highly degenerate elements that can be found based on protein homology but too degenerate to identify with nucleotide sequence searches.</p></div>
+<div class="para"><p>Other highly recommended tools for mining transposons that complement this effort include RepeatMasker and RepeatScout.</p></div>
+</div>
+</div>
+<h2 id="_running_transposonpsi">Running TransposonPSI</h2>
+<div class="sectionbody">
+<div class="para"><p>There are two primary modes for running TranspsonPSI</p></div>
+<div class="ilist"><ul>
+<li>
+<p>
+searching genomes:  a PSI-TBLASTN search of a genome sequence(s) is performed against each of the transpson profiles.  This is useful for mining new members of known transposon families in newly sequenced genomes.
+</p>
+</li>
+<li>
+<p>
+search a protein set: each protein is searched against the collection of profiles.  This is useful for flagging annotated genes that share homology to known transposon profiles.
+</p>
+</li>
+</ul></div>
+<h3 id="_searching_genomes">Searching Genomes</h3><div style="clear:left"></div>
+<div class="para"><p>Given a genome sequence:  genome.fasta, run TransposonPSI like so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>transposonPSI.pl genome.fasta nuc</tt></pre>
+</div></div>
+<div class="para"><p>A working example of this type of search is provided in the <strong>test/</strong> directory included in the distribution.</p></div>
+<div class="para"><p>Result files include:</p></div>
+<div class="ilist"><ul>
+<li>
+<p>
+genome.fasta.TPSI.allHits  : all HSPs reported by PSITBLASTN in btab format.
+</p>
+</li>
+<li>
+<p>
+genome.fasta.TPSI.allHits.chains : collinear HSPs are chained together into larger chains (more complete element regions).
+</p>
+</li>
+<li>
+<p>
+genome.fasta.TPSI.allHits.chains.gff3 : the chains in gff3 format
+</p>
+</li>
+<li>
+<p>
+genome.fasta.TPSI.allHits.chains.bestPerLocus : a DP scan is performed, extracting the best scoring chain per genomic locus.
+</p>
+</li>
+<li>
+<p>
+genome.fasta.TPSI.allHits.chains.bestPerLocus.gff3 : the best chains in gff3 format.
+</p>
+</li>
+</ul></div>
+<div class="para"><p>The gff3 files can be loaded into your favorite genome browser (such as gbrowse).  An example best chain looks like so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>genome  TransposonPSI   translated_nucleotide_match     3539    4624    259     +       .       ID=chain00005; Target=TY1_Copia; E=2e-24 16 490
+genome  TransposonPSI   translated_nucleotide_match     4007    7159    1826    +       .       ID=chain00005; Target=TY1_Copia; E=0.0 511 1530
+genome  TransposonPSI   translated_nucleotide_match     7101    7496    347     +       .       ID=chain00005; Target=TY1_Copia; E=2e-34 1512 1640</tt></pre>
+</div></div>
+<h3 id="_searching_proteins">Searching Proteins</h3><div style="clear:left"></div>
+<div class="para"><p>Given a protein multi-fasta file <em>proteins.fasta</em>, run TransposonPSI like so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>transposonPSI.pl proteins.fasta  prot</tt></pre>
+</div></div>
+<div class="para"><p>Two btab files will be generated:</p></div>
+<div class="ilist"><ul>
+<li>
+<p>
+proteins.fasta.TPSI.allHits : all PSIBLASTP matches for each query protein sequence.
+</p>
+</li>
+<li>
+<p>
+proteins.fasta.TPSI.topHits: the single best transposonPSI match for each query protein sequence.
+</p>
+</li>
+</ul></div>
+</div>
+<h2 id="_transposon_protein_database">Transposon Protein Database</h2>
+<div class="sectionbody">
+<div class="para"><p>Profiles are available for most of the common transposon families encountered.  However, there are many novel elements that exist and some are highly divergent, which makes it difficult to include and represent as PSIBLAST profiles.  For now, we collect and retain such proteins as a regular protein multi-fasta file, included in the distribution as:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>transposon_ORF_lib/transposon_db.pep</tt></pre>
+</div></div>
+<div class="para"><p>You can search your query proteins against it using BLASTP.  Alternatively, search these transposon proteins against your genome using TBLASTN.</p></div>
+<div class="para"><p>The transposon protein family designations are included in the fasta header, like so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>&gt;GB:AAC33318 pol polyprotein (gypsy_Ty3-element) [Drosophila virilis]
+&gt;GB:AAC33320 epigene product (gypsy_Ty3-element) [Drosophila virilis]
+&gt;GB:AAC33319 envelope protein (gypsy_Ty3-element) [Drosophila virilis]
+&gt;GB:AAA88790 gag polyprotein (gypsy_Ty3-element) [Fusarium oxysporum]
+&gt;GB:AAA88791 pol polyprotein (gypsy_Ty3-element) [Fusarium oxysporum]
+&gt;GB:CAA51083 ORF1 (Gypsy_Ty3-element) [Drosophila subobscura]
+&gt;GB:CAA51084 ORF2 (Gypsy_Ty3-element) [Drosophila subobscura]
+&gt;GB:CAA51085 ORF3 (Gypsy_Ty3-element) [Drosophila subobscura]
+&gt;GB:AAA28599 ORF1 (Gypsy_Ty3-element) [Drosophila virilis]</tt></pre>
+</div></div>
+<div class="para"><p>A Genbank or other accession is included, along with the family classification and organism from which it is derived (in most cases).</p></div>
+<div class="para"><p>Contributions of novel proteins to this data set are welcome! (see contact info below)  &#8230;. and will be manually inspected prior to inclusion in a subsequent release.</p></div>
+</div>
+<h2 id="_contact">Contact</h2>
+<div class="sectionbody">
+<div class="para"><p>Send questions, comments, contributions, etc. to <a href="mailto:transposonpsi-users@lists.sf.net">transposonpsi-users@lists.sf.net</a></p></div>
+<div class="para"><p>Developed and maintained by <a href="http://broadinstitute.org/~bhaas">Brian Haas</a> @ Broad Institute, originally at The Institute for Genome Research (TIGR).</p></div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2010-08-22 13:28:35 EDT
+</div>
+</div>
+</body>
+</html>

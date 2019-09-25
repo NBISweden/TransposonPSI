@@ -1,0 +1,109 @@
+TransposonPSI: An Application of PSI-Blast to Mine (Retro-)Transposon ORF Homologies
+====================================================================================
+
+TransposonPSI is an analysis tool to identify protein or nucleic acid sequence homology to proteins encoded by diverse families of transposable elements.  PSI-Blast is used with a collection of (retro-)transposon ORF homology profiles to identify statistically significant alignments.  This method can be used to identify potential transposon ORFs within a protein set, or to identify regions of transposon homology within a larger genome sequence.  This is particularly useful to identify degenerate transposon homologies within genome sequences that escape identification and masking by using RepeatMasker and an associated nucleotide library of repetitive elements.  TransposonPSI has been routinely used to assist in the discovery of mobile elements across eukaryotes including protozoa, plants, fungi, and animals.
+
+https://sourceforge.net/project/platformdownload.php?group_id=195256[Download] TransposonPSI 
+
+Included in the release is:
+
+- a perl script to run TransposonPSI on a multi-fasta file containing protein(orf) or nucleotide(cds or genome) sequences using a collection of psi-blast profiles for a variety of transposon families
+
+- a large collection of diverse transpson ORF protein sequences that can be blast-searched separately.
+
+
+The types of transposons represented include:
+
+- gypsy and copia polyproteins
+- cryptons
+- helitrons
+- various families of DNA transposons
+- line retrotransposon orfs
+
+and other potentially interesting transposon proteins.
+
+The proteins are loosely catalogued according to family type, and the family information is located in the fasta header.
+
+
+This simple tool and the collection of sequences have been used widely over the years for genome annotation as a rapid way to identify related transposons and highly degenerate elements that can be found based on protein homology but too degenerate to identify with nucleotide sequence searches.
+
+
+Other highly recommended tools for mining transposons that complement this effort include RepeatMasker and RepeatScout.
+
+
+== Running TransposonPSI ==
+
+There are two primary modes for running TranspsonPSI
+
+- searching genomes:  a PSI-TBLASTN search of a genome sequence(s) is performed against each of the transpson profiles.  This is useful for mining new members of known transposon families in newly sequenced genomes.  
+
+- search a protein set: each protein is searched against the collection of profiles.  This is useful for flagging annotated genes that share homology to known transposon profiles.
+
+=== Searching Genomes ===
+
+Given a genome sequence:  genome.fasta, run TransposonPSI like so:
+
+
+    transposonPSI.pl genome.fasta nuc
+
+A working example of this type of search is provided in the *test/* directory included in the distribution.
+
+Result files include:
+
+- genome.fasta.TPSI.allHits  : all HSPs reported by PSITBLASTN in btab format.
+- genome.fasta.TPSI.allHits.chains : collinear HSPs are chained together into larger chains (more complete element regions).
+- genome.fasta.TPSI.allHits.chains.gff3 : the chains in gff3 format
+- genome.fasta.TPSI.allHits.chains.bestPerLocus : a DP scan is performed, extracting the best scoring chain per genomic locus.
+- genome.fasta.TPSI.allHits.chains.bestPerLocus.gff3 : the best chains in gff3 format.
+
+The gff3 files can be loaded into your favorite genome browser (such as gbrowse).  An example best chain looks like so:
+
+ genome  TransposonPSI   translated_nucleotide_match     3539    4624    259     +       .       ID=chain00005; Target=TY1_Copia; E=2e-24 16 490
+ genome  TransposonPSI   translated_nucleotide_match     4007    7159    1826    +       .       ID=chain00005; Target=TY1_Copia; E=0.0 511 1530 
+ genome  TransposonPSI   translated_nucleotide_match     7101    7496    347     +       .       ID=chain00005; Target=TY1_Copia; E=2e-34 1512 1640
+
+===  Searching Proteins ===
+
+Given a protein multi-fasta file 'proteins.fasta', run TransposonPSI like so:
+
+  transposonPSI.pl proteins.fasta  prot
+
+Two btab files will be generated: 
+
+- proteins.fasta.TPSI.allHits : all PSIBLASTP matches for each query protein sequence.
+- proteins.fasta.TPSI.topHits: the single best transposonPSI match for each query protein sequence.
+
+
+== Transposon Protein Database ==
+
+Profiles are available for most of the common transposon families encountered.  However, there are many novel elements that exist and some are highly divergent, which makes it difficult to include and represent as PSIBLAST profiles.  For now, we collect and retain such proteins as a regular protein multi-fasta file, included in the distribution as:
+
+   transposon_ORF_lib/transposon_db.pep  
+
+You can search your query proteins against it using BLASTP.  Alternatively, search these transposon proteins against your genome using TBLASTN.
+
+The transposon protein family designations are included in the fasta header, like so:
+
+ >GB:AAC33318 pol polyprotein (gypsy_Ty3-element) [Drosophila virilis]
+ >GB:AAC33320 epigene product (gypsy_Ty3-element) [Drosophila virilis]
+ >GB:AAC33319 envelope protein (gypsy_Ty3-element) [Drosophila virilis]
+ >GB:AAA88790 gag polyprotein (gypsy_Ty3-element) [Fusarium oxysporum]
+ >GB:AAA88791 pol polyprotein (gypsy_Ty3-element) [Fusarium oxysporum]
+ >GB:CAA51083 ORF1 (Gypsy_Ty3-element) [Drosophila subobscura]
+ >GB:CAA51084 ORF2 (Gypsy_Ty3-element) [Drosophila subobscura]
+ >GB:CAA51085 ORF3 (Gypsy_Ty3-element) [Drosophila subobscura]
+ >GB:AAA28599 ORF1 (Gypsy_Ty3-element) [Drosophila virilis]
+
+A Genbank or other accession is included, along with the family classification and organism from which it is derived (in most cases).
+
+
+Contributions of novel proteins to this data set are welcome! (see contact info below)  .... and will be manually inspected prior to inclusion in a subsequent release.
+
+
+== Contact ==
+
+Send questions, comments, contributions, etc. to mailto:transposonpsi-users@lists.sf.net[transposonpsi-users@lists.sf.net]
+
+
+Developed and maintained by http://broadinstitute.org/~bhaas[Brian Haas] @ Broad Institute, originally at The Institute for Genome Research (TIGR).
+
