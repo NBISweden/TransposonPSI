@@ -2,8 +2,10 @@
 
 TransposonPSI involves a PSI-blast search of a protein or nucleotide sequence against a set of profiles of proteins corresponding to major clades/families of transposon Open Reading Frames.
 
-<p style='color:red'>**Note:** This repo is created just for ease of creating a conda package for TransposonPSI, please refer to the original site at</p> http://transposonpsi.sourceforge.net/
+```html
+<p style='color:red'><b>Note:</b> This repo is created just for ease of creating a conda package for TransposonPSI, please refer to the original site at</p> http://transposonpsi.sourceforge.net/
 <p style='color:red'> if you have any questions.  </p>
+```
 
 This is most useful to:
 -identify proteins with similarities to known families of transposon ORFs.
